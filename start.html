@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <title>Title</title>
+     <style>
+         ul {
+             margin: 100px 0 0 300px;
+        }
+
+        li {
+            list-style: none;
+            font-size: 20px;
+            float: left;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    </style>
+    <script src="js/jquery-1.12.2.min.js"></script>
+    <script>
+    	$(function(){
+    		$('.list .start').click(function(){
+    			$(this).attr('index',1).siblings().removeAttr('index');
+    			$(this).html('★').prevAll().html('★');
+    		}).mouseenter(function(){
+    			$(this).html('★').prevAll().html('★');
+    		}).mouseleave(function(){
+    			$(this).html('☆').prevAll().html('☆');
+    			$('.list .start[index=1]').html('★').prevAll().html('★');
+    		})
+    	})
+    </script>
+</head>
+	
+<body>
+    <ul class="list">
+        <li class="start">☆</li>
+        <li class="start">☆</li>
+        <li class="start">☆</li>
+        <li class="start">☆</li>
+        <li class="start">☆</li>
+    </ul>
+</body>
+
+</html>
